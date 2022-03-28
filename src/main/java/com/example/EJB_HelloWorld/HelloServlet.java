@@ -5,11 +5,11 @@ import javax.ejb.EJB;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
-@EJB(name="MyEjb", beanInterface=MyFirstSessionRemote.class)
+@WebServlet(name = "helloServlet", value = "/")
 public class HelloServlet extends HttpServlet {
     private String message;
-    private static MyFirstSessionRemote myFirstSessionBean;
+    @EJB(name="MyEjb", beanInterface=MyFirstSessionRemote.class)
+    private MyFirstSessionRemote myFirstSessionBean;
     public void init() {
         message = myFirstSessionBean.sayHello();
     }
