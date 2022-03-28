@@ -6,6 +6,6 @@ import javax.ejb.Stateless;
 public class MyFirstSessionBean implements MyFirstSessionRemote {
     @Override
     public String sayHello() {
-        return "Hello World";
+        return "Hello World Majd";
     }
 }
